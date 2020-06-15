@@ -6,9 +6,9 @@ React Bootstrap component to build pagination for array of items.
 [![Build Status][travis-image]][travis-url]
 [![Downloads][downloads-image]][downloads-url]
 
-# One-thousand-word-picture
+# One-thousand-word picture
 
-![](https://raw.githubusercontent.com/vlsergey/react-bootstrap-pagination/master/doc-images/size5pageDefault.png)
+![](https://raw.githubusercontent.com/vlsergey/react-bootstrap-array-pagination/master/doc-images/size5pageDefault.png)
 
 # Installation
 ```
@@ -49,7 +49,7 @@ const items = /* array of some items */;
 | Property        | Default value | Description |
 | --------------- |:-------------:| ----------- |
 | **`items`**     | *required*    | Items to paginate.                                                                        |
-| **`children`**  | *required*    | How to render single page.                                                                |
+| **`children`**  | *required*    | Function that specify how to render single page.                                          |
 | `defaultPage`   | `0`           | Page to display by default (0-based).                                                     |
 | `defaultSize`   | `10`          | Items to diplay on single page by default. _Should_ present in `sizeProps.options` array. |
 | `pageProps`     | `{}`          | Properties passed to instance of [`@vlsergey/react-bootstrap-pagination`](https://github.com/vlsergey/react-bootstrap-pagination) |
@@ -60,7 +60,7 @@ const items = /* array of some items */;
 The argument of `children` function is a structure with following properties:
 | Property        | Description |
 | --------------- |------------ |
-| `components     | Single 100%-width line (`DIV`) with pagination and page size form controls.
+| `components`    | Single 100%-width line (`DIV`) with pagination and page size form controls.
 | `pageItems`     | Slice of original `items` array to display on current page.
 | `offset`        | Current offset for first current page item (0-based)
 | `page`          | Current page index (0-based)
