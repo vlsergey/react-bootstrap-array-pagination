@@ -1,6 +1,6 @@
 {
   "name": "@vlsergey/react-bootstrap-array-pagination",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "browserslist": "defaults, not dead",
   "description": "React Bootstrap component to build pagination for array of items",
   "main": "lib/index.js",
