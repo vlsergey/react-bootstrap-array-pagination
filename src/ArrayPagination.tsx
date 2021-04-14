@@ -1,9 +1,8 @@
 import React, { PureComponent, ReactNode } from 'react';
-import { boundMethod } from 'autobind-decorator';
 import Form from 'react-bootstrap/Form';
 import Pagination from '@vlsergey/react-bootstrap-pagination';
 
-interface PaginationResult<T> {
+export interface PaginationResult<T> {
   components : ReactNode;
   offset : number;
   page : number;
@@ -46,13 +45,11 @@ export default class ArrayPagination<T> extends PureComponent<PropsType<T>, Stat
     };
   }
 
-  @boundMethod
-  handlePageChange( { target: { value } } : ( {target:{value: number}} ) ) : void {
+  handlePageChange = ( { target: { value } } : ( {target:{value: number}} ) ) : void => {
     this.setState( { page: Number( value ) } );
   }
 
-  @boundMethod
-  handleSizeChange( event : React.ChangeEvent<HTMLSelectElement> ) : void {
+  handleSizeChange = ( event : React.ChangeEvent<HTMLSelectElement> ) : void => {
     const { currentTarget: { value } } = event;
     this.setState( { size: Number( value ) } );
   }

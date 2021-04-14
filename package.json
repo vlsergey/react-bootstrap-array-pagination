@@ -2,10 +2,11 @@
   "name": "@vlsergey/react-bootstrap-array-pagination",
   "version": "2.0.0",
   "description": "React Bootstrap component to build pagination for array of items",
-  "main": "lib/index.js",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
   "scripts": {
     "clean": "rimraf lib/",
-    "build": "cross-env NODE_ENV=production tsc -p ./src",
+    "build": "cross-env NODE_ENV=production tsc -p ./src/tsconfig-cjs.json && cross-env NODE_ENV=production tsc -p ./src/tsconfig-esm.json",
     "build:watch": "cross-env NODE_ENV=development tsc -w -p ./src",
     "eslint:check": "eslint --ignore-pattern \"!.eslintrc.js\" .eslintrc.js karma.conf.js src/**/*.ts src/**/*.tsx test/**/*.js test/**/*.tsx",
     "eslint:fix": "eslint --ignore-pattern \"!.eslintrc.js\" --fix .eslintrc.js karma.conf.js src/**/*.ts src/**/*.tsx test/**/*.js test/**/*.tsx",
@@ -32,11 +33,9 @@
     "url": "https://github.com/vlsergey/react-bootstrap-array-pagination/issues"
   },
   "homepage": "https://github.com/vlsergey/react-bootstrap-array-pagination#readme",
-  "dependencies": {
-    "@vlsergey/react-bootstrap-pagination": "^2.0.0"
-  },
   "devDependencies": {
-    "@vlsergey/js-config": "^0.2.0",
+    "@vlsergey/js-config": "^1.0.0",
+    "@vlsergey/react-bootstrap-pagination": "^2.1.0",
     "react-bootstrap": "^1.0.0"
   },
   "peerDependencies": {
